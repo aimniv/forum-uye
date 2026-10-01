@@ -1,20 +1,24 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Dijital lisans mağazası (Next.js)
 
-# Run and deploy your AI Studio app
+Kategori listeleme, ürün detayı, sepet (kupon destekli), ödeme ve iletişim sayfalarından oluşan e-ticaret arayüzü.
 
-This contains everything you need to run your app locally.
+## Çalıştırma
 
-View your app in AI Studio: https://ai.studio/apps/aea3efe7-6b10-43e0-980a-82cbcc56f8f8
+```
+npm install
+npm run dev
+```
 
-## Run Locally
+## Özelleştirme
 
-**Prerequisites:**  Node.js
+- `lib/site.ts`: marka adı, açıklama, iletişim bilgileri, kategoriler, demo kuponlar (`HOSGELDIN` = %10).
+- `lib/products.ts`: ürün kataloğu. Mevcut ürünler örnektir; ad, fiyat ve görselleri kendi ürünlerinle değiştir.
+- `components/ProductArt.tsx`: ürün görseli yer tutucusu. Gerçek görsel eklemek için bu bileşeni `next/image` ile değiştir.
+- `app/kurumsal/[slug]`: gizlilik, kullanım şartları, iade koşulları ve S.S.S. metinleri boş; kendi işletmene göre yaz.
 
+## Yapılması gerekenler (yayından önce)
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+- **Kart ödemesi:** Kart bilgisi bu sitede alınmaz. `app/api/checkout/route.ts` içindeki TODO'ya ödeme sağlayıcısının (iyzico, PayTR, Stripe vb.) oturum oluşturma çağrısını ekle ve `PAYMENT_PROVIDER_CHECKOUT_URL` ayarla.
+- **Sipariş kaydı ve teslimat:** Siparişler şu an saklanmıyor ve e-posta gönderilmiyor.
+- **İletişim formu:** `app/api/contact/route.ts` mesajı yalnızca doğruluyor; e-posta/veritabanı bağlantısı eklenmeli.
+- **Üyelik:** `/hesabim` yer tutucudur.
