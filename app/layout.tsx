@@ -6,7 +6,7 @@ import { Footer } from '@/components/Footer';
 import { SITE } from '@/lib/site';
 
 export const metadata: Metadata = {
-  title: { default: `${SITE.tagline} | ${SITE.name} ${SITE.nameAccent}`, template: `%s | ${SITE.name} ${SITE.nameAccent}` },
+  title: { default: `${SITE.tagline} | ${SITE.name}${SITE.nameAccent}`, template: `%s | ${SITE.name}${SITE.nameAccent}` },
   description: SITE.description,
 };
 

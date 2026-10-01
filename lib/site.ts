@@ -1,6 +1,6 @@
 // Tek noktadan marka ve iletişim ayarları. Yayına almadan önce hepsini kendi bilgilerinle değiştir.
 export const SITE = {
-  name: 'Marka',
+  name: 'AYMEN',
   nameAccent: 'Lisans',
   tagline: 'Ucuz Lisans Satın Al',
   description:

@@ -71,7 +71,7 @@ export function Footer() {
           </div>
         </div>
         <div className="border-t border-neutral-800 py-5 text-center text-[10px] text-neutral-500">
-          © {new Date().getFullYear()} {SITE.name}. Tüm hakları saklıdır.
+          © {new Date().getFullYear()} {SITE.name}{SITE.nameAccent}. Tüm hakları saklıdır.
         </div>
       </div>
     </footer>
